@@ -34,6 +34,10 @@ body {
 
     font-family: "Shippori Antique", serif;
     color: var(--dark-blue);
+
+    background-color: var(--yellow);
+    border: var(--yellow) 10px solid;
+    border-radius: 25px;
 }
 
 .h-txt {
