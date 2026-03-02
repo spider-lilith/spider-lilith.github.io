@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>うさぎって最高の動物だよ</title>
+    <title>うさぎって最高の動物だよ</title>
+    <link rel="icon" type="image/png" href="images/kanade-favicon.png"/>
 
-	<link rel="stylesheet" href="syles.css">
+	<link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -12,157 +17,300 @@
 			天よりも空よりも輝け
 		</p>
 		<p class="h-small-txt">
-			てん よりも そら よりも かがやけ
+			てん   よりも  そら    よりも   かがやけ
 		</p>
 		<img src="images/pretty-kanade.png" alt="pretty kanade yoisaki card" class="h-img">
 	</header>
 
 
-	<nav>
-	    <ul>
-	        <li><a href="#task1a">Task 1A – Proposal</a></li>
-	        <li><a href="#task1b">Task 1B – Design</a></li>
-	        <li><a href="#band3">Band 3 Self-Check</a></li>
-	    </ul>
-	</nav>
+    <nav>
+        <ul>
+            <li><a href="#task1a">Task 1A - Proposal</a></li>
+                <li><a href="#task1b">Task 1B - Design</a></li>
+                <li><a href="#sites">Websites</a></li>    
+        </ul>    
+    </nav>    
 	
 	<hr>
 	
-	<!-- ================= TASK 1A ================= -->
+	<!-- ------------------------------------- TASK 1A ------------------------------------- -->
 	
 	<section id="task1a">
-	    <h2>Task 1A – Proposal</h2>
-	
-	    <h3>1. Introduction & Problems</h3>
-	
-	    <label><input type="checkbox"> Overview of Client (who they are, what they do, what is missing)</label><br>
-	    <label><input type="checkbox"> User Needs vs Business Needs clearly separated</label><br>
-	    <label><input type="checkbox"> 4–6 clear technical problems identified</label>
-	
-	    <p><strong>Trigger:</strong> Are the problems specific? Do they mention data, process or system limitations?</p>
-	
-	    <h3>2. Problem Decomposition</h3>
-	
-	    <label><input type="checkbox"> Each major problem broken into smaller technical components</label><br>
-	    <label><input type="checkbox"> Data requirements identified</label><br>
-	    <label><input type="checkbox"> Validation needs identified</label><br>
-	    <label><input type="checkbox"> Storage and processing explained</label>
-	
-	    <p><strong>Trigger:</strong> Input → Validate → Process → Store → Output</p>
-	
-	    <h3>3. Proposed Solution</h3>
-	
-	    <label><input type="checkbox"> Type of system clearly identified</label><br>
-	    <label><input type="checkbox"> Frontend, backend and database justified</label><br>
-	    <label><input type="checkbox"> Client-server architecture explained</label>
-	
-	    <h3>4. Functional Requirements</h3>
-	
-	    <label><input type="checkbox"> Clear “system must…” statements</label><br>
-	    <label><input type="checkbox"> Measurable and specific</label>
-	
-	    <h3>5. Non-Functional Requirements</h3>
-	
-	    <label><input type="checkbox"> Performance</label><br>
-	    <label><input type="checkbox"> Security</label><br>
-	    <label><input type="checkbox"> Accessibility</label><br>
-	    <label><input type="checkbox"> Reliability</label>
-	
-	    <p><strong>Trigger:</strong> These describe HOW the system behaves, not what it does.</p>
-	
-	    <h3>6. Risks & Legal</h3>
-	
-	    <label><input type="checkbox"> Security risk + mitigation</label><br>
-	    <label><input type="checkbox"> Privacy risk + mitigation</label><br>
-	    <label><input type="checkbox"> Context-specific risk + mitigation</label><br>
-	    <label><input type="checkbox"> Relevant legislation referenced</label>
-	
-	    <p><strong>Trigger:</strong> Risk → Impact → Mitigation</p>
-	
-	    <h3>7. Business Justification</h3>
-	
-	    <label><input type="checkbox"> Efficiency improvements explained</label><br>
-	    <label><input type="checkbox"> Revenue or growth potential explained</label><br>
-	    <label><input type="checkbox"> Industry relevance explained</label>
-	
-	    <h3>8. KPIs & Acceptance Criteria</h3>
-	
-	    <label><input type="checkbox"> Measurable KPIs defined</label><br>
-	    <label><input type="checkbox"> Clear acceptance conditions stated</label>
-	
+        <h2>Task 1A - Proposal</h2>
+
+<!-- ------------------------------------- -->
+            <h3>1. Introduction & Problems</h3>
+        
+                <label><input type="checkbox"> Overview of Client (who they are, what they do, 
+                        what is missing)</label>
+                    <p>client operates in [industry], providing [services]<br>avoid copying 
+                        brief
+                    </p><br>
+
+                <label><input type="checkbox"> User & Client Needs</label>
+                    <p>client needs are business focused - improve efficiency, increase revenue 
+                        etc<br>user needs are functional & experience focused - easy account 
+                        making, seamless navigation, accessibility
+                    </p><br>
+
+                <label><input type="checkbox"> Problems to be Solved</label>
+                    <p>be precise - identify missing system, missing data handling, business 
+                        impact
+                    </p><hr>
+
+
+<!-- ------------------------------------- -->
+            <h3>2. Problem Decomposition</h3>
+        
+                <label><input type="checkbox"> Problems broken down into sub-problems</label>
+                    <p>break into - data requirements, process, storage, interface, validation, 
+                        security<br>example - no tracking system: user authentication, input form, 
+                        db table to store entries, calculation, interface for visualisation, 
+                        error handling
+                    </p>
+
+                <p>Input → Validate → Process → Store → Output</p>
+
+            <hr>
+
+
+<!-- ------------------------------------- -->
+            <h3>3. Proposed Solution</h3>
+
+                <label><input type="checkbox"> Summary of System</label>
+                    <p>include: feature 1, feature 2, etc<br>mention: frontend, backend, database,
+                        apis if used
+                    </p><br>
+
+                <label><input type="checkbox"> Data Flow</label>
+                    <p>INCLUDE DIAGRAM<br>explain properly - input through front-end, validation,
+                        processing, storage in db, output, error handling
+                        explain how data moves securely between front-end, back-end 
+                        and database layers
+                    </p><br>
+
+                <label><input type="checkbox"> Technology Overview</label>
+                    <p>mention: programming language, database, hosting, frameworks/libraries<br>
+                        justify based on - suitability for task, team expertise, cost, 
+                        security & scalability
+                    </p><hr>
+
+
+<!-- ------------------------------------- -->
+            <h3>4. Functional Requirements</h3>
+                <p>the specific behaviours and operations the system must perform<br>
+                    must describe specific system behaviours and operations in measurable 
+                    terms<br>
+                    consider membership levels, personalisation, or tiered access if relevant 
+                    to brief
+                </p>
+
+                <label><input type="checkbox"> Clear, specific requirements</label>
+                    <p>security, data handling, let users register/book, calculations,
+                        membership tiers, etc
+                    </p><hr>
+
+
+<!-- ------------------------------------- -->
+            <h3>5. Non-Functional Requirements</h3>
+                <p>how the system performs, including usability, reliability, performance, 
+                    and security<br>define system quality attributes that affect user 
+                    experience and operational performance
+                </p>
+                
+                <label><input type="checkbox"> Clear, specific requirements</label>
+                    <p>usability - intuitive interface, accessibility<br>reliability - 99.9% uptime, 
+                        regular backups<br>performance - load times under 2 seconds, handle 1000 
+                        concurrent users<br>security - data encryption, secure authentication, 
+                        regular security audits
+                    </p><hr>
+
+
+<!-- ------------------------------------- -->
+            <h3>6. Business Context & Justification</h3>
+
+                <label><input type="checkbox"> Business Context Identified</label>
+                    <p>
+                    market position, target audience, competitors, growth goals<br>
+                    how the business currently operates
+                    </p><br>
+
+                <label><input type="checkbox"> Commercial Impact Explained</label>
+                    <p>
+                    increase revenue, reduce admin costs, improve retention, expand reach<br>
+                    existing + new customers
+                    </p><br>
+
+                <label><input type="checkbox"> Strategic Alignment</label>
+                    <p>
+                    aligns with industry standards, supports digital transformation<br>
+                    uses modern practices appropriately
+                    </p><br>
+
+                <label><input type="checkbox"> Justification of Proposed Solution</label>
+                    <p>
+                    solves all key problems from section 1<br>
+                    meets client + user needs<br>
+                    realistic, secure, compliant, scalable
+                    </p><hr>
+
+
+<!-- ------------------------------------- -->
+            <h3>7. Wider Issues, Risks & Mitigation</h3>
+                <p>For each risk: identify the risk → explain the impact → explain the 
+                    mitigation.<br>Focus on realistic, technical mitigations — not vague 
+                    statements like “use security”.
+                </p>
+
+                <!-- 7.1 Security -->
+                <label><input type="checkbox"> Security Risks</label>
+                    <p>
+                    Risk: unauthorised account access<br>
+                    Impact: data breach, reputational damage, financial loss<br>
+                    Mitigation: hashed passwords, HTTPS, secure authentication, rate limiting
+                    </p><br>
+
+                <!-- 7.2 Privacy -->
+                <label><input type="checkbox"> Privacy Risks</label>
+                    <p>
+                    Risk: personal data misuse / GDPR breach<br>
+                    Impact: legal penalties, loss of trust<br>
+                    Mitigation: data minimisation, user consent, secure database storage
+                    </p><br>
+
+                <!-- 7.3 Context-Specific -->
+                <label><input type="checkbox"> Context-Specific Risks</label>
+                    <p>
+                    Risk: incorrect calculations / incorrect system output<br>
+                    Impact: unsafe decisions, financial loss, user harm<br>
+                    Mitigation: validated inputs, tested formulas, verification checks
+                    </p><br>
+
+                <!-- 7.4 Accessibility -->
+                <label><input type="checkbox"> Accessibility Risks</label>
+                    <p>
+                    Risk: system not usable by disabled users<br>
+                    Impact: exclusion, legal non-compliance (Equality Act)<br>
+                    Mitigation: WCAG guidelines, high contrast UI, keyboard navigation, screen reader compatibility
+                    </p><br>
+
+                <!-- 7.5 Legal & Regulatory -->
+                <label><input type="checkbox"> Legal Compliance</label>
+                    <p>
+                    GDPR • Computer Misuse Act • Equality Act • industry-specific regulation<br>
+                    Explain how the system complies.
+                    </p><hr>
+
+                <label><input type="checkbox"> User Support & Maintenance Considered</label>
+                    <p>
+                    Risk: users unable to resolve issues<br>
+                    Impact: reduced satisfaction, abandonment<br>
+                    Mitigation: help documentation, support contact, maintenance plan
+                    </p><br>
+
+
+<!-- ------------------------------------- -->
+            <h3>8. Current Practice & Emerging Tech</h3>
+                <p>describe → identify limitation → evaluate → align with solution.</p>
+
+                <label><input type="checkbox"> Current Industry Practice Identified</label>
+                    <p>
+                    existing digital platforms • automation • mobile-first design • data-driven systems<br>
+                    reference at least one real-world system (briefly explain what it does)
+                    </p><br>
+
+                <label><input type="checkbox"> Limitations of Current Solutions</label>
+                    <p>
+                    identify gaps: usability • cost • lack of features • limited accessibility • outdated processes
+                    </p><br>
+
+                <label><input type="checkbox"> Emerging Technologies Considered</label>
+                    <p>
+                    AI • data analytics • automation • IoT • cloud services (only if relevant to brief)
+                    </p><br>
+
+                <label><input type="checkbox"> Evaluation & Alignment</label>
+                    <p>
+                    explain how proposed solution aligns with modern practices<br>
+                    show how it improves on limitations identified
+                    </p>
+                
+                <p>mention 1-2 real systems in industry, explain what they do, identify 
+                    limitation, show how yours aligns/improves
+                </p>
+
+            <hr>
+
+
+<!-- ------------------------------------- -->
+            <h3>9. KPIs</h3>
+                <p>KPIs must be specific, measurable, achievable, relevant and time-bound
+                    (SMART).</p>
+
+                <label><input type="checkbox"> Measurable Performance Targets Defined</label>
+                    <p>
+                    registration success rate (e.g. 95%+)<br>
+                    task completion efficiency (e.g. under 3 steps)<br>
+                    system uptime (e.g. 99%+)<br>
+                    page load speed (e.g. under 3 seconds)
+                    </p><br>
+
+                <label><input type="checkbox"> Data Accuracy Targets Defined</label>
+                    <p>
+                    calculation accuracy (e.g. 98%+)<br>
+                    validated input success rate
+                    </p><br>
+
+                <label><input type="checkbox"> User Satisfaction Measured</label>
+                    <p>
+                    user testing feedback (e.g. 80%+ positive response)<br>
+                    usability testing outcomes
+                    </p><br>
+
+                <label><input type="checkbox"> KPIs Linked to Requirements</label>
+                    <p>
+                    each KPI should directly relate to a functional or non-functional requirement
+                    </p>
+
+                <p>weak kpi: system should be fast<br>strong kpi: system must load within 
+                    3 seconds under normal operating conditions
+                </p>
+
+                <hr>
+
+
+<!-- ------------------------------------- -->
+            <h3>10. UAC</h3>
+                
+            <label><input type="checkbox"> Core System Functions Work</label>
+                <p>
+                users can register and log in without errors<br>
+                primary tasks (e.g. booking, tracking, calculations) complete successfully
+                </p><br>
+
+            <label><input type="checkbox"> Data Handling is Accurate & Secure</label>
+                <p>
+                calculations produce correct results<br>
+                data is stored, retrieved and protected correctly<br>
+                GDPR requirements followed
+                </p><br>
+
+            <label><input type="checkbox"> Usability & Accessibility Confirmed</label>
+                <p>
+                interface functions across devices<br>
+                accessibility features operate correctly
+                </p><br>
+
+            <label><input type="checkbox"> All Requirements Met</label>
+                <p>
+                all functional and non-functional requirements satisfied
+                </p>
+
+            <p>Write acceptance criteria as clear & testable statements.</p>
+
 	</section>
 	
-	<hr>
-	
-	<!-- ================= TASK 1B ================= -->
-	
-	<section id="task1b">
-	    <h2>Task 1B – Design</h2>
-	
-	    <h3>1. Interface Design</h3>
-	
-	    <label><input type="checkbox"> Memory load minimised</label><br>
-	    <label><input type="checkbox"> Clear feedback provided (validation, confirmations)</label><br>
-	    <label><input type="checkbox"> Structured layout (grid, spacing, alignment)</label><br>
-	    <label><input type="checkbox"> Visual hierarchy clear</label><br>
-	    <label><input type="checkbox"> Design consistent</label><br>
-	    <label><input type="checkbox"> Accessibility considered</label>
-	
-	    <p><strong>Trigger:</strong> Can a new user navigate without thinking?</p>
-	
-	    <h3>2. Data Requirements</h3>
-	
-	    <label><input type="checkbox"> Database tables defined</label><br>
-	    <label><input type="checkbox"> Field names, data types and constraints included</label><br>
-	    <label><input type="checkbox"> Relationships explained (primary/foreign keys)</label><br>
-	    <label><input type="checkbox"> Data dictionary included</label><br>
-	    <label><input type="checkbox"> Validation rules identified</label>
-	
-	    <p><strong>Trigger:</strong> Does each table support a functional requirement?</p>
-	
-	    <h3>3. Algorithm Design</h3>
-	
-	    <label><input type="checkbox"> Purpose of algorithm clearly stated</label><br>
-	    <label><input type="checkbox"> Inputs defined</label><br>
-	    <label><input type="checkbox"> Processing steps logical</label><br>
-	    <label><input type="checkbox"> Outputs defined</label><br>
-	    <label><input type="checkbox"> Error handling included</label><br>
-	    <label><input type="checkbox"> Sequence used</label><br>
-	    <label><input type="checkbox"> Selection (IF) used</label><br>
-	    <label><input type="checkbox"> Iteration (FOR/WHILE) used</label><br>
-	    <label><input type="checkbox"> Algorithm terminates correctly</label>
-	
-	    <p><strong>Trigger:</strong> Would another programmer be able to implement this?</p>
-	
-	    <h3>4. Testing Strategy</h3>
-	
-	    <label><input type="checkbox"> Unit testing explained</label><br>
-	    <label><input type="checkbox"> Integration testing explained</label><br>
-	    <label><input type="checkbox"> System testing explained</label><br>
-	    <label><input type="checkbox"> UAT explained</label><br>
-	    <label><input type="checkbox"> Tests linked to requirements</label>
-	
-	</section>
-	
-	<hr>
-	
-	<!-- ================= BAND 3 CHECK ================= -->
-	
-	<section id="band3">
-	    <h2>Band 3 Self-Check</h2>
-	
-	    <h3>Before Submitting:</h3>
-	
-	    <label><input type="checkbox"> Problems are technically decomposed</label><br>
-	    <label><input type="checkbox"> Technology choices are justified</label><br>
-	    <label><input type="checkbox"> Risks include impact and mitigation</label><br>
-	    <label><input type="checkbox"> Algorithms include IF and LOOP</label><br>
-	    <label><input type="checkbox"> Database includes constraints and relationships</label><br>
-	    <label><input type="checkbox"> Tests clearly map to requirements</label><br>
-	    <label><input type="checkbox"> Explanations are detailed, not surface-level</label>
-	
-	    <p><strong>Final Question:</strong> Have I explained WHY, not just WHAT?</p>
-	</section>
+    <!-- ------------------------------------- TASK 1B ------------------------------------- -->
 
 
 </body>
