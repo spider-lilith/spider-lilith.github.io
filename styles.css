@@ -1,21 +1,13 @@
 :root {
     scroll-behavior: smooth;
 
-    --black: #1d1d1e;
-    --dark_red: #620a1a;
-    --red: #a31e21;
-    --gold: #c6953f;
-    --grey: #c2b8b2;
-    --cream: #e9e3d6;
-    --white: #f9f7f5;
-
-    --black-rgb: 29, 29, 30;
-    --dark_red-rgb: 98, 10, 26;
-    --red-rgb: 163, 30, 33;
-    --gold-rgb: 198, 149, 63;
-    --grey-rgb: 194, 184, 178;
-    --cream-rgb: 233, 227, 214;
-    --white-rgb: 249, 247, 245;
+    --black: #282524ff;
+    --dark-blue: #807391ff;
+    --blue: #bec2e8ff;
+    --yellow: #ebeec1ff;
+    --dark-grey: #A49BA8ff;
+    --grey: #c7bfcbff;
+    --white: #e7e3e8ff;
 }
 
 html, body {
@@ -26,18 +18,163 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    font-family: "nova mono", monospace;
+    font-family: "Sour Gummy", cursive;
 
     background-color: var(--white);
     color: var(--black);
 }
 
 .fun-header {
-    display: flex;
+    background-color: var(--white);
+}
+
+.fun-header p {
+    position: absolute;
+    z-index: 10;
+
+    font-family: "Shippori Antique", serif;
+    color: var(--dark-blue);
+}
+
+.h-txt {
+    position: absolute;
+    z-index: 10;
+    font-size: 24px;
+
+    top: 15px;
+    left: 100px;
+}
+
+.h-small-txt {
+    position: absolute;
+    z-index: 10;
+    font-size: 12px;
+    word-spacing: 14px;
+
+    top: 55px;
+    left: 102px;
 }
 
 .h-img {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: auto;
+}
+
+/* ------------------------------------------------------------------------------------------------------ */
+/* navbar */
+
+nav {
+    background-color: var(--grey);
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 18px;
+    padding: 15px 20px;
+
+        transition: transform 0.2s ease, color 0.2s ease;
+}
+
+nav ul a:hover {
+    color: var(--dark-blue);
+}
+
+
+
+
+/* ========== Sections ========== */
+section {
+    background-color: var(--grey);
+    padding: 40px 60px;
+    margin: 30px 120px;
+    border-radius: 16px;
+
+    border: 2px solid var(--dark-blue);
+    box-shadow: 0 6px 14px rgba(40, 37, 36, 0.08);
+}
+
+section h2 {
+    margin-bottom: 15px;
+    padding-bottom: 6px;
+
+    color: var(--black);
+    border-bottom: 3px solid var(--dark-blue);
+}
+
+section h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 23px;
+
+    color: var(--dark-blue);
+}
+
+/* ========== Checkboxes ========== */
+label {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+    color: var(--black);
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    accent-color: var(--blue);
+}
+
+/* ========== Trigger Text ========== */
+p strong {
+    color: var(--dark-blue);
+}
+
+p {
+    margin-top: 8px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: var(--dark-grey);
+}
+
+/* ========== Divider ========== */
+hr {
+    border: none;
+    height: 2px;
+    background-color: var(--dark-blue);
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+
+    section {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    body {
+        font-size: 16px;
+    }
 }
