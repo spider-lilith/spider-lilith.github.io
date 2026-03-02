@@ -32,3 +32,12 @@ body {
     color: var(--black);
 }
 
+.fun-header {
+    display: flex;
+}
+
+.h-img {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
