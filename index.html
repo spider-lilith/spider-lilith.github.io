@@ -43,8 +43,25 @@
         
                 <label><input type="checkbox"> Overview of Client (who they are, what they do, 
                         what is missing)</label>
-                    <p>client operates in [industry], providing [services]<br>avoid copying 
-                        brief
+                    <p>Greenfield Local Hub (GLH) is a cooperative organisation made up of
+                        local farmers and food producers. This organisation provides one 
+                        retail lovation where locally produced food and drink can be sold 
+                        to customers, while also supporting farmers through shared marketing 
+                        and product managament. <br>
+                        The hub aims to promote sustainable food production and encourage 
+                        customers to buy locally sourced products. However, managing product 
+                        availability, producer information, customer orders and stock levels 
+                        across multiple suppliers can be complex when relying on manual 
+                        processes or fragmented systems. <br>
+                        To improve efficiency and customer experience, GLH requires a digital 
+                        solution that allows customers to explore locally produced goods, 
+                        place orders, and learn more about the producers behind the products. 
+                        At the same time, the system must provide producers with tools to 
+                        manage stock levels, update product details, and monitor incoming 
+                        orders. <br>
+                        The solution must support both customer-facing services and producer 
+                        management features while ensuring accessibility for a wide range of 
+                        users. <br>
                     </p><br>
 
                 <label><input type="checkbox"> User & Client Needs</label>
@@ -52,24 +69,117 @@
                         etc<br>user needs are functional & experience focused - easy account 
                         making, seamless navigation, accessibility
                     </p><br>
+                    <p>
+The client requires a digital platform that improves operational efficiency while promoting 
+locally produced food and drink. The system must allow producers to manage product information, 
+monitor stock levels, and view incoming customer orders in a centralised location.
+<br>
+From a business perspective, the client needs a system that reduces manual administration, 
+improves product traceability, and strengthens the visibility of local producers through 
+shared marketing and transparent product information.
+<br>
+Customers require a simple and intuitive system where they can browse locally available 
+products, view pricing and availability, place orders for delivery or collection, and manage 
+their personal accounts. Users should also be able to view information about producers, 
+including their farming methods and the benefits of purchasing locally sourced food.
+<br>
+The platform must also support accessibility features so that users with a wide range of 
+abilities can easily access and interact with the system.
+                    </p>
 
                 <label><input type="checkbox"> Problems to be Solved</label>
-                    <p>be precise - identify missing system, missing data handling, business 
-                        impact
+                    <p>
+Currently, several problems prevent Greenfield Local Hub from operating as efficiently as 
+possible.
+<br>
+There is no centralised digital system that allows customers to browse locally produced 
+products, meaning customers may struggle to view available items, compare prices, or place 
+orders conveniently.
+<br>
+The client lacks an integrated system for managing stock levels across multiple producers. 
+Without this, producers may struggle to keep product availability up to date, which could 
+lead to incorrect stock information or unavailable items being ordered.
+<br>
+There is currently no digital platform that provides detailed information about individual 
+producers and their production methods. This makes it difficult for customers to understand 
+the benefits of purchasing locally sourced products.
+<br>
+Order processing may currently rely on manual coordination between producers and the hub, 
+increasing the risk of delays, errors, or inefficient scheduling for collection and delivery.
+<br>
+Additionally, there is no system to support customer accounts, order history tracking, or 
+loyalty rewards, which limits customer engagement and reduces opportunities to encourage 
+repeat purchases.
+<br>
+A digital solution is therefore required to improve product visibility, streamline order 
+management, support producers in managing their inventory, and enhance the overall customer 
+experience.
                     </p><hr>
 
 
 <!-- ------------------------------------- -->
             <h3>2. Problem Decomposition</h3>
         
-                <label><input type="checkbox"> Problems broken down into sub-problems</label>
-                    <p>break into - data requirements, process, storage, interface, validation, 
-                        security<br>example - no tracking system: user authentication, input form, 
-                        db table to store entries, calculation, interface for visualisation, 
-                        error handling
-                    </p>
+                <h3>2. Problem Decomposition</h3>
 
-                <p>Input → Validate → Process → Store → Output</p>
+<label><input type="checkbox"> Problems broken down into sub-problems</label>
+<p>
+Break problems into: data requirements, processing, storage, interface,
+validation and security.<br>
+Example: No tracking system → user authentication, input form,
+database table to store entries, calculation/processing,
+visualisation interface, and error handling.
+</p>
+
+<label><input type="checkbox"> Customers cannot easily view available local products or 
+    pricing</label>
+<ul>
+    <li>Database to store product details (name, price, availability, producer)</li>
+    <li>Product catalogue interface for customers</li>
+    <li>Search and filter tools to help users find products</li>
+    <li>System to retrieve product data from the database</li>
+    <li>Validation to ensure product data is displayed accurately</li>
+</ul>
+
+<label><input type="checkbox"> Producers cannot easily manage their stock levels 
+    digitally</label>
+<ul>
+    <li>Secure login system for producers</li>
+    <li>Producer dashboard interface</li>
+    <li>Database tables to store stock quantities</li>
+    <li>Forms allowing producers to update stock levels and product details</li>
+    <li>Validation to prevent incorrect or negative stock values</li>
+</ul>
+
+<label><input type="checkbox"> Customers cannot place or manage orders digitally</label>
+<ul>
+    <li>Shopping cart system for selected products</li>
+    <li>Order processing system</li>
+    <li>Scheduling system for delivery or collection</li>
+    <li>Database tables to store order records</li>
+    <li>Order confirmation and tracking interface</li>
+</ul>
+
+<label><input type="checkbox"> Customers cannot learn about producers or the benefits of 
+    buying locally</label>
+<ul>
+    <li>Database to store producer profiles and descriptions</li>
+    <li>Content pages displaying information about producers</li>
+    <li>Interface allowing users to view farming methods and product origins</li>
+    <li>Producer tools to update their information</li>
+</ul>
+
+<label><input type="checkbox"> There is no system for encouraging repeat purchases or 
+    customer engagement</label>
+<ul>
+    <li>User account registration and login system</li>
+    <li>Database to store user account details</li>
+    <li>Order history tracking for customers</li>
+    <li>Loyalty scheme system with discounts or rewards</li>
+    <li>Database table for storing loyalty points</li>
+</ul>
+
+<p><strong>Input → Validate → Process → Store → Output</strong></p>
 
             <hr>
 
@@ -78,52 +188,100 @@
             <h3>3. Proposed Solution</h3>
 
                 <label><input type="checkbox"> Summary of System</label>
-                    <p>include: feature 1, feature 2, etc<br>mention: frontend, backend, database,
-                        apis if used
+                    <p>The proposed solution is a database-driven web application that allows
+customers to browse locally produced food and drink, place orders for
+delivery or collection, and manage their accounts. The system will also
+provide a dashboard for producers so they can update product details,
+manage stock levels and view incoming orders.<br><br>
+The platform will promote transparency by displaying information about
+local producers, their farming methods and the benefits of buying
+locally sourced food. The system will also include optional features
+such as a loyalty scheme to encourage repeat purchases.
                     </p><br>
 
                 <label><input type="checkbox"> Data Flow</label>
-                    <p>INCLUDE DIAGRAM<br>explain properly - input through front-end, validation,
-                        processing, storage in db, output, error handling
-                        explain how data moves securely between front-end, back-end 
-                        and database layers
-                    </p><br>
+                    <p>INCLUDE DIAGRAM<br></p>
+                    <p>
+Data will move through the system using the following process:
+
+
+<br>
+- User enters information through the interface (e.g. account details or product orders)<br>
+- The frontend validates the input before sending it to the server<br>
+- The backend processes the request using system logic<br>
+- Validated data is stored securely in the database<br>
+- The system retrieves relevant data and displays results to the user<br>
+<br>
+
+
+This ensures data is validated before storage and allows the system to
+process user requests efficiently while maintaining data integrity.
+</p><br>
 
                 <label><input type="checkbox"> Technology Overview</label>
-                    <p>mention: programming language, database, hosting, frameworks/libraries<br>
-                        justify based on - suitability for task, team expertise, cost, 
-                        security & scalability
-                    </p><hr>
+                    <p>The system will follow a client-server architecture where the frontend
+handles user interaction, the backend processes requests, and the
+database securely stores and retrieves data.</p>
+<p>
+<strong>Frontend:</strong> HTML, CSS and JavaScript used to create the user interface and 
+interactive features.<br>
+<strong>Backend:</strong> Server-side processing to handle orders, authentication and business 
+logic.<br>
+<strong>Database:</strong> A relational database used to store users, products, orders and 
+producer data.<br>
+</p><hr>
 
 
 <!-- ------------------------------------- -->
             <h3>4. Functional Requirements</h3>
-                <p>the specific behaviours and operations the system must perform<br>
-                    must describe specific system behaviours and operations in measurable 
-                    terms<br>
-                    consider membership levels, personalisation, or tiered access if relevant 
-                    to brief
-                </p>
+<label><input type="checkbox"> Functional requirements defined</label>
+<p>
+Functional requirements describe the specific actions and features the
+system must perform in order to meet the needs of both the client and
+the users.
+</p>
 
-                <label><input type="checkbox"> Clear, specific requirements</label>
-                    <p>security, data handling, let users register/book, calculations,
-                        membership tiers, etc
-                    </p><hr>
+<label><input type="checkbox"> System functions clearly listed</label>
+<p>
+- The system must allow users to create and manage personal accounts.<br>
+- The system must allow users to browse available local food and drink products.<br>
+- The system must display transparent product pricing and availability.<br>
+- The system must allow users to place orders for delivery or collection.<br>
+- The system must store and display order history for customers.<br>
+- The system must allow producers to log in securely and manage their products.<br>
+- The system must allow producers to update product details and stock levels.<br>
+- The system must provide order management tools for producers.<br>
+- The system must display information about producers and their farming methods.<br>
+- The system must support a loyalty scheme that provides discounts or rewards.<br>
+- The system must include accessibility features to support a wide range of users.<br>
+</p>
+
+<hr>
 
 
 <!-- ------------------------------------- -->
             <h3>5. Non-Functional Requirements</h3>
-                <p>how the system performs, including usability, reliability, performance, 
-                    and security<br>define system quality attributes that affect user 
-                    experience and operational performance
-                </p>
-                
-                <label><input type="checkbox"> Clear, specific requirements</label>
-                    <p>usability - intuitive interface, accessibility<br>reliability - 99.9% uptime, 
-                        regular backups<br>performance - load times under 2 seconds, handle 1000 
-                        concurrent users<br>security - data encryption, secure authentication, 
-                        regular security audits
-                    </p><hr>
+
+<label><input type="checkbox"> Non-functional requirements defined</label>
+<p>
+Non-functional requirements describe how the system should perform.
+They include performance, security, reliability and usability
+expectations.
+</p>
+
+<label><input type="checkbox"> Performance, usability and security identified</label>
+<p>
+- The system should load pages within 3 seconds to ensure good user experience.<br>
+- The system should maintain high reliability with minimal downtime.<br>
+- The system should support multiple devices through responsive design.<br>
+- The system should protect user accounts using secure authentication.<br>
+- The system should store sensitive data securely using encryption where appropriate.<br>
+- The system should meet accessibility guidelines such as WCAG standards.<br>
+- The system should provide clear navigation and an intuitive interface.<br>
+- The system should ensure accurate product and order information.<br>
+</p>
+
+<hr>
 
 
 <!-- ------------------------------------- -->
@@ -152,7 +310,30 @@
                     solves all key problems from section 1<br>
                     meets client + user needs<br>
                     realistic, secure, compliant, scalable
-                    </p><hr>
+                    </p>
+                    
+                <label><input type="checkbox"> Solution justified in business context</label>
+<p>
+The proposed system supports the business goals of Greenfield Local Hub
+by improving how customers interact with local food producers and how
+producers manage their products.
+</p>
+
+<ul>
+<li>The platform increases visibility for local farmers and producers.</li>
+<li>Customers gain easier access to locally produced food and drink.</li>
+<li>Producers can manage stock and orders more efficiently.</li>
+<li>The system reduces manual administration and improves organisation.</li>
+<li>The digital platform helps the hub compete with larger retailers.</li>
+<li>The loyalty scheme encourages repeat purchases and customer engagement.</li>
+</ul>
+
+<p>
+By improving accessibility, transparency and efficiency, the system
+supports both the commercial success of the hub and the promotion of
+locally sourced products.
+</p>
+<hr>
 
 
 <!-- ------------------------------------- -->
@@ -162,52 +343,41 @@
                     statements like “use security”.
                 </p>
 
-                <!-- 7.1 Security -->
-                <label><input type="checkbox"> Security Risks</label>
-                    <p>
-                    Risk: unauthorised account access<br>
-                    Impact: data breach, reputational damage, financial loss<br>
-                    Mitigation: hashed passwords, HTTPS, secure authentication, rate limiting
-                    </p><br>
+<label><input type="checkbox"> Risks identified and mitigation explained</label>
 
-                <!-- 7.2 Privacy -->
-                <label><input type="checkbox"> Privacy Risks</label>
-                    <p>
-                    Risk: personal data misuse / GDPR breach<br>
-                    Impact: legal penalties, loss of trust<br>
-                    Mitigation: data minimisation, user consent, secure database storage
-                    </p><br>
+<h5>7.1 Security Risks</h5>
+<ul>
+<li><strong>Risk:</strong> Unauthorised access to user or producer accounts.</li>
+<li><strong>Mitigation:</strong> Use secure authentication, encrypted passwords and HTTPS connections.</li>
+</ul>
 
-                <!-- 7.3 Context-Specific -->
-                <label><input type="checkbox"> Context-Specific Risks</label>
-                    <p>
-                    Risk: incorrect calculations / incorrect system output<br>
-                    Impact: unsafe decisions, financial loss, user harm<br>
-                    Mitigation: validated inputs, tested formulas, verification checks
-                    </p><br>
+<h5>7.2 Privacy Risks</h5>
+<ul>
+<li><strong>Risk:</strong> Personal customer information could be exposed or misused.</li>
+<li><strong>Mitigation:</strong> Store personal data securely and limit data collection to only what is required.</li>
+</ul>
 
-                <!-- 7.4 Accessibility -->
-                <label><input type="checkbox"> Accessibility Risks</label>
-                    <p>
-                    Risk: system not usable by disabled users<br>
-                    Impact: exclusion, legal non-compliance (Equality Act)<br>
-                    Mitigation: WCAG guidelines, high contrast UI, keyboard navigation, screen 
-                    reader compatibility
-                    </p><br>
+<h5>7.3 Context-Specific Risks</h5>
+<ul>
+<li><strong>Risk:</strong> Incorrect product availability could lead to orders for out-of-stock items.</li>
+<li><strong>Mitigation:</strong> Implement real-time stock updates and validation when orders are placed.</li>
+</ul>
 
-                <!-- 7.5 Legal & Regulatory -->
-                <label><input type="checkbox"> Legal Compliance</label>
-                    <p>
-                    GDPR, Computer Misuse Act, Equality Act, industry-specific regulation<br>
-                    Explain how the system complies.
-                    </p><br>
+<h5>7.4 Accessibility Risks</h5>
+<ul>
+<li><strong>Risk:</strong> Some users may struggle to use the system due to accessibility barriers.</li>
+<li><strong>Mitigation:</strong> Use clear navigation, readable text, good colour contrast and support screen readers.</li>
+</ul>
 
-                <label><input type="checkbox"> User Support & Maintenance Considered</label>
-                    <p>
-                    Risk: users unable to resolve issues<br>
-                    Impact: reduced satisfaction, abandonment<br>
-                    Mitigation: help documentation, support contact, maintenance plan
-                    </p><hr>
+<h5>7.5 Legal & Regulatory Requirements</h5>
+<ul>
+<li>General Data Protection Regulation (GDPR)</li>
+<li>Computer Misuse Act</li>
+<li>Equality Act (accessibility requirements)</li>
+<li>Data protection and secure handling of personal information</li>
+</ul>
+
+<hr>
 
 
 <!-- ------------------------------------- -->
@@ -238,6 +408,29 @@
                     explain how proposed solution aligns with modern practices<br>
                     show how it improves on limitations identified
                     </p>
+
+                <label><input type="checkbox"> Industry practices identified</label>
+
+<p>
+Modern digital marketplaces often use online platforms to connect
+customers with producers and retailers. These systems typically provide
+product browsing, digital ordering and account management features.
+</p>
+
+<ul>
+<li>E-commerce platforms allow users to browse and purchase products online.</li>
+<li>Digital dashboards allow suppliers to manage stock and product details.</li>
+<li>Mobile-friendly platforms allow customers to shop using phones or tablets.</li>
+<li>Data analytics tools can be used to monitor product demand and customer behaviour.</li>
+</ul>
+
+<p>
+The proposed solution follows these industry practices while focusing
+specifically on promoting locally produced goods and supporting small
+producers through a shared digital platform.
+</p>
+
+
                 
                 <p>mention 1-2 real systems in industry, explain what they do, identify 
                     limitation, show how yours aligns/improves
@@ -282,6 +475,17 @@
                     3 seconds under normal operating conditions
                 </p>
 
+                <label><input type="checkbox"> KPIs clearly measurable</label>
+
+<ul>
+<li>At least 95% of users should be able to successfully create an account.</li>
+<li>Page loading times should remain under 3 seconds.</li>
+<li>The system should maintain uptime above 99%.</li>
+<li>Orders should be completed within a small number of steps.</li>
+<li>Stock information should remain accurate and up to date.</li>
+<li>User feedback should indicate high satisfaction with usability.</li>
+</ul>
+
                 <hr>
 
 
@@ -311,6 +515,25 @@
                     <p>
                     all functional and non-functional requirements satisfied
                     </p>
+
+                <label><input type="checkbox"> Acceptance criteria clearly defined</label>
+
+<p>
+The system will be accepted by the client if the following conditions
+are met:
+</p>
+
+<ul>
+<li>Users can create accounts and log in without errors.</li>
+<li>Customers can browse products and view pricing and availability.</li>
+<li>Orders for delivery or collection can be placed successfully.</li>
+<li>Producers can update product details and stock levels through the dashboard.</li>
+<li>Customers can view order history through their accounts.</li>
+<li>The loyalty scheme applies discounts or rewards correctly.</li>
+<li>The system works across multiple devices and browsers.</li>
+<li>The system meets accessibility and data protection requirements.</li>
+</ul>
+
 
                 <p>Write acceptance criteria as clear & testable statements.</p>
 
@@ -358,161 +581,13 @@
 
         </div>
 
-		<div class="this">
-			<p>
-				probkems : customers cant easily access product information. customers cannot order products online. 
-				customers cannot manage accounts or view order history. producers cannot wasily manave stock or product
-				details (innacyrate stock, outdated info) , orders cannot be tracked or managed digitally (struggle to organise 
-				deliveries, collection and irder tracking). no info about food producers and locak food benefits. 
-			</p>
-
-			<p>
-				problem decomposition: Customer Account System
-
-Handles user authentication and account management.
-	•	User registration
-	•	Secure login
-	•	Profile management
-	•	Viewing order history
-	•	Managing delivery details <br>
-
-				Product Catalogue System
-
-Displays products available from local producers.
-
-Functions:
-	•	Store product name, description and price
-	•	Show stock availability
-	•	Display images and producer information
-	•	Allow customers to browse products
-				<br>
-
-				Producer Dashboard
-
-Allows farmers and producers to manage their products.
-
-Functions:
-	•	Add new products
-	•	Update product descriptions
-	•	Adjust stock levels
-	•	View incoming orders
-<br>
-				Order Management System
-
-Handles customer purchases and order tracking.
-
-Functions:
-	•	Add items to basket
-	•	Confirm orders
-	•	Choose delivery or collection
-	•	Schedule collection or delivery times
-	•	Track order status
-<br>
-				Loyalty and Promotions System
-
-Encourages repeat customers.
-
-Functions:
-	•	Apply discounts
-	•	Track loyalty points
-	•	Provide special offers
-
-				<br>
-
-				Information and Marketing Pages
-
-Promotes local food and producers.
-
-Functions:
-	•	Display producer profiles
-	•	Explain farming methods
-	•	Promote benefits of buying locally
-
-			</p>
-				<hr>
-				<p>
-
-				Wider Issues and Risks
-
-The solution must also address several risks.
-
-Security
-	•	User accounts must be protected with secure authentication and encrypted passwords.
-	•	The system must prevent unauthorised access.
-
-Privacy and Data Protection
-	•	Customer information such as names, addresses and contact details must be stored securely.
-	•	The system must comply with data protection laws such as GDPR.
-
-Accessibility
-	•	The system should include accessibility features to support users with disabilities.
-	•	This may include readable fonts, alt text for images and keyboard navigation.
-
-System Reliability
-	•	Stock levels must update automatically after orders to prevent overselling.
-
-⸻
-
-4. Functional Requirements
-
-Functional requirements describe what the system must do.
-
-Examples for GLH:
-	•	Allow customers to create and manage accounts
-	•	Display products with prices and availability
-	•	Allow customers to place orders for delivery or collection
-	•	Allow producers to update product details and stock levels
-	•	Provide an order tracking system
-	•	Allow customers to view order history
-	•	Provide loyalty discounts and offers
-
-⸻
-
-5. Non-Functional Requirements
-
-Non-functional requirements describe how well the system performs.
-
-Examples:
-	•	The system must be secure and protect user data
-	•	Pages should load quickly to provide a good user experience
-	•	The interface must be easy to navigate
-	•	The system must be accessible to a wide range of users
-
-⸻
-
-6. Key Performance Indicators (KPIs)
-
-KPIs measure whether the system is successful.
-
-Examples:
-	•	Increase in online orders
-	•	Number of registered users
-	•	Customer satisfaction with the ordering system
-	•	Accuracy of stock levels
-
-⸻
-
-7. User Acceptance Criteria
-
-These define how users will confirm the system works correctly.
-
-Examples:
-	•	Customers can successfully create an account and log in
-	•	Customers can browse products and place orders
-	•	Producers can update product details and stock levels
-	•	Orders are recorded and displayed correctly in the system
-
-
-			</p>
-		</div>
-
 	</section>
 	
     <!-- ------------------------------------- TASK 1B ------------------------------------- -->
 
     <section id="task1b">
 
-        <h2>TASK 1B - DESIGN DOCUMENT (EXAM GUIDE)</h2>
+        <h2>Task 1B - Design Documentation</h2>
 
 
 <!-- ------------------------------------- -->
@@ -526,17 +601,62 @@ Examples:
                 <!-- 1.1 Design Overview -->
                 <label><input type="checkbox"> Design Overview</label>
                     <p>
-                    <strong>Minimalism</strong> - <br>
-                    <strong>Memory Load Reduction</strong> - <br>
-                    <strong>Feedback Visibility</strong> - <br>
-                    <strong>Accessibility</strong> - <br>
+                    <strong>Minimalism</strong> - no unnecessary content, like irrelevant images or clutter<br>
+                    <strong>Memory Load Reduction</strong> - visible navigation, clear buttons, labels, 
+                    menus, breadcrumbs<br>
+                    <strong>Feedback Visibility</strong> - confirmation messages, error messages, loading 
+                    indicators<br>
                     </p>
 
-                <label><input type="checkbox"> Layout & Visual Structure</label>
+                <label><input type="checkbox"> Layout & White Space</label>
                     <p>
-                    .
+                    <strong>Describe Layout</strong> - clear structure, logical grouping of elements, visual 
+                    hierarchy<br>
+                    <strong>White Space</strong> - line spacing (leading) important for readability. too small - 
+                    hard to read and follow along, too big - wander away from the text<br>
+                    </p>
+
+                <label><input type="checkbox"> Visual Hierarchy</label>
+                    <p>
+                    <strong>What do users see first?</strong> - use of size, colour, contrast to indicate importance 
+                    and guide users<br>
+                    <strong>Primary v Secondary actions</strong> - primary actions (e.g. submit, buy) should be 
+                    more visually prominent than secondary actions (e.g. cancel, learn more)<br>
+                    </p>
+
+                <label><input type="checkbox"> Consistency & Standards</label>
+                    <p>
+                    <strong>Familiar Patterns</strong> - use common UI patterns (e.g. hamburger menu, search bar) to 
+                    leverage users' existing knowledge and reduce learning curve<br>
+                    <strong>Consistency</strong> - consistent use of colours, fonts, button styles across the design to 
+                    create a cohesive experience<br>
+                    <strong>Why does it improve usability?</strong> - reduces cognitive load, helps users form accurate mental 
+                    models, and makes the interface more predictable
+                    <strong>Common Conventions</strong> - follow established conventions, like logo in top left, navigation at 
+                    top or left, clickable elements look clickable, F-Shaped scanning pattern for text-heavy pages
+                    </p>
+
+                <label><input type="checkbox"> Accessibility Considerations</label>
+                    <p>
+                    <strong>Colour Contrast</strong> - ensure sufficient contrast between text and background for 
+                    readability<br>
+                    <strong>Keyboard Navigation</strong> - design should be fully navigable using a keyboard for users with 
+                    mobility impairments<br>
+                    <strong>Screen Reader Compatibility</strong> - use semantic HTML and ARIA labels to ensure content is 
+                    accessible to screen readers<br>
                     </p>
                     
+                <label><input type="checkbox"> Aesthetic & Minimalism</label>
+                    <p>
+                    justify colour choices, explain why clutter is avoided, imagery is relevant and purposeful
+                    </p>
+
+                <label><input type="checkbox"> Help & Support</label>
+                    <p>
+                    mention help features such as tooltips, FAQs, contact support, user guides, and explain how they enhance 
+                    usability and decrease user frustration
+                    </p>
+
                 <hr>
 
 
@@ -546,9 +666,9 @@ Examples:
                 </p>
 
                 <!-- 1.1 Security -->
-                <label><input type="checkbox"> check 1</label>
+                <label><input type="checkbox"> Overview</label>
                     <p>
-                    .
+                    
                     </p><hr>
 
 
