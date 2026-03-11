@@ -136,6 +136,7 @@ label {
     margin-bottom: 8px;
     cursor: pointer;
     color: var(--black);
+    font-size: 18px;
 }
 
 input[type="checkbox"] {
@@ -153,6 +154,10 @@ p {
     margin-top: 8px;
     margin-bottom: 12px;
     font-size: 0.95rem;
+    color: var(--dark-grey);
+}
+
+pre {
     color: var(--dark-grey);
 }
 
