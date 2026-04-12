@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 2 – Backend Setup & Iteration 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f7f6;
+      color: #333;
+      line-height: 1.7;
+      margin: 40px;
+      max-width: 1000px;
+    }
+
+    h1, h2, h3 {
+      color: #2f5d34;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    code, pre {
+      background-color: #1f2933;
+      color: #e5e7eb;
+      padding: 15px;
+      border-radius: 6px;
+      display: block;
+      overflow-x: auto;
+      font-size: 0.95em;
+    }
+
+    .note {
+      background-color: #fff3cd;
+      border-left: 6px solid #f0ad4e;
+      padding: 15px;
+      margin: 20px 0;
+    }
+
+    .success {
+      background-color: #e6ffe6;
+      border-left: 6px solid #28a745;
+      padding: 15px;
+      margin: 20px 0;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>OSP Task 2 – Backend Setup (Iteration 1)</h1>
+<p><strong>Stack:</strong> HTML, CSS, JavaScript | PHP | MySQL (XAMPP)</p>
+
+<div class="note">
+<strong>Purpose of this section:</strong><br>
+To demonstrate a secure, modular backend setup and provide evidence of the 
+first iteration in the iterative development process.
+</div>
+
+<hr>
+
+<section>
+<h2>1. Secure Database Connection (db.php)</h2>
+
+<p>
+The database connection is separated into its own file to support a 
+<strong>modular structure</strong> and improve maintainability. This prevents 
+duplication of connection code and allows changes to be made in a single location.
+</p>
+
+<h3>File location</h3>
+<pre><code>/glh/config/db.php</code></pre>
+
+<h3>PHP Code</h3>
+
+<pre><code>&lt;?php
+// db.php - Database connection file
+
+$host = "localhost";
+$dbname = "glh";
+$username = "root";
+$password = "";
+
+// Create MySQLi connection
+$conn = new mysqli($host, $username, $password, $dbname);
+
+// Check connection
+if ($conn-&gt;connect_error) {
+    die("Database connection failed: " . $conn-&gt;connect_error);
+}
+?&gt;
+</code></pre>
+
+<div class="success">
+✅ Demonstrates:<br>
+• Modular structure<br>
+• Maintainable code<br>
+• Backend language usage<br>
+• Clean organisation
+</div>
+</section>
+
+<hr>
+
+<section>
+<h2>2. Basic Database Test Script</h2>
+
+<p>
+A simple test script was created to confirm that the database connection
+was functioning correctly and that product data could be retrieved.
+</p>
+
+<h3>File location</h3>
+<pre><code>/glh/test_products.php</code></pre>
+
+<h3>PHP Code</h3>
+
+<pre><code>&lt;?php
+require_once "config/db.php";
+
+// SQL query to retrieve products
+$sql = "SELECT product_id, product_name, price, stock_quantity FROM products";
+$result = $conn-&gt;query($sql);
+
+// Check if results exist
+if ($result &amp;&amp; $result-&gt;num_rows &gt; 0) {
+
+    echo "&lt;h2&gt;Product List (Test Output)&lt;/h2&gt;";
+
+    while ($row = $result-&gt;fetch_assoc()) {
+        echo "&lt;p&gt;";
+        echo "ID: " . $row["product_id"] . "&lt;br&gt;";
+        echo "Name: " . $row["product_name"] . "&lt;br&gt;";
+        echo "Price: £" . $row["price"] . "&lt;br&gt;";
+        echo "Stock: " . $row["stock_quantity"];
+        echo "&lt;/p&gt;&lt;hr&gt;";
+    }
+
+} else {
+    echo "No products found or query failed.";
+}
+?&gt;
+</code></pre>
+
+<p>
+This script verifies database connectivity and confirms that data can be
+retrieved and processed using PHP.
+</p>
+</section>
+
+<hr>
+
+<section>
+<h2>3. Testing – Iteration 1 Documentation</h2>
+
+<p>
+The following wording can be reused directly within the Task 2 documentation.
+</p>
+
+<pre><code>
+Initial testing was carried out after implementing the database connection and
+product retrieval functionality. A test script was used to query the products
+table and display the stored data.
+
+Testing confirmed that the database connection operated successfully and that
+product information could be retrieved and processed correctly using PHP and MySQL.
+
+Normal test data was used, including valid product names, prices and stock values.
+The successful implementation was retained as the foundation for further development.
+</code></pre>
+
+<div class="success">
+✅ Covers:<br>
+• Iterative development process<br>
+• Testing evidence<br>
+• Decision to retain iteration<br>
+• Backend functionality proof
+</div>
+</section>
+
+<hr>
+
+<section class="note">
+<h3>Key phrases to reuse in Task 2:</h3>
+<ul>
+  <li>Iterative development process</li>
+  <li>Modular structure</li>
+  <li>Maintainable backend code</li>
+  <li>Robust validation</li>
+  <li>Defensive programming</li>
+  <li>Regression testing</li>
+</ul>
+</section>
+
+</body>
+</html>
