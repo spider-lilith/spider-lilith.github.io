@@ -33,94 +33,125 @@
 
 	<hr>
 
-	<!-- ------------------------------------- TASK 1A ------------------------------------- -->
+	<!-- ------------------------------------- TASK 2 ------------------------------------- -->
 
-	<section id="task1a">
-        <h2>Task 2 - Developing the Solution</h2>
+	
+h1>OSP Task 2 – Day‑by‑Day Development Plan</h1>
+  <p><strong>Stack:</strong> HTML, CSS, JavaScript (Frontend) | PHP & MySQL (Backend)</p>
+  <p><strong>Environment:</strong> XAMPP</p>
 
-        <label><input type="checkbox"> you got this?</label>
+  <div class="important">
+    <strong>Key reminder:</strong><br>
+    Task 2 is about demonstrating <em>secure, functional, iterative development</em>,
+    not building a perfect website.
+  </div>
 
-<p>
-meow
-</p>
+  <section>
+    <h2>Day 1 – Database Setup ✅</h2>
+    <div class="done">
+      <ul>
+        <li>Create MySQL database in phpMyAdmin</li>
+        <li>Import tables based on Task 1 ERD</li>
+        <li>Check primary and foreign keys</li>
+      </ul>
+      <p>This counts as Iteration 1 – Design to Implementation.</p>
+    </div>
+  </section>
 
-<hr>
+  <section>
+    <h2>Day 2 – Backend Setup & Database Connection</h2>
+    <ul>
+      <li>Create project folder structure in <code>htdocs</code></li>
+      <li>Create <code>db.php</code> for MySQL connection</li>
+      <li>Use mysqli or PDO</li>
+      <li>Test connection by selecting data from database</li>
+    </ul>
+    <p><strong>Evidence gained:</strong> modular structure, maintainable code, backend language usage.</p>
+  </section>
 
-<!-- ------------------------------------- -->
-        <div class="mark-scheme">
-            <div class="focus-box">
-                <h3>functionality</h3>
-                <ul>
-<li> Must demonstrate the use of two different
-languages, JS and PHP or SQL. Python
-and SQL.</li>
-<li> The techniques used are appropriate and
-demonstrate a level of technical skill</li>
-<li> Maybe complex data model in database
-interlinking more than one table</li>
-<li> Recursive algorithms – reminder that if used
-in PHP here must be a mechanism (IF
-statement, etc.) that stops
-the recursion after the desired result has
-been found</li>
-<li> Server-side scripting using request and
-response objects and server-side
-extensions for a complex client-server
-model</li>
-<li> Web service APIs and parsing JSON/XML
-to service a complex client-server model</li>
-<li> Use of MySQL, the use of DML and DDL</li>
-<li> Various outcomes which may be basic in
-terms of very linear structure to more
-logically and efficient approach. The use of
-function, procedures and Classes</li>
-<li> The solution will be well structured and
-modular in nature – clearly see subsections
-this may be separated modules</li>
-                </ul>
+  <section>
+    <h2>Day 3 – Product Catalogue (Customer View)</h2>
+    <ul>
+      <li>Create <code>products.php</code></li>
+      <li>Retrieve products from database</li>
+      <li>Display product name, price and stock</li>
+      <li>Add basic CSS for readability</li>
+      <li>Handle errors (no products / DB failure)</li>
+    </ul>
+    <p><strong>Testing focus:</strong> normal, boundary and extreme data.</p>
+  </section>
 
-            <div class="focus-box">
-                <h3>code organisation</h3>
-                <ul>
-<li> For top marks should avoid multiple pages
-of nested if clauses and for loops with a lot
-of copy-pasted procedural code</li>
-<li> Clear and meaningful indentation</li>
-<li> Code should consist of pieces of logic,
-classes or objects, with proper structure.</li>
-<li> comments should be used where ever
-possible to help explain the logic</li>
-<li> good use of local variables and minimal use
-of global variables</li>
-<li> use of constants</li>
-<li> well-designed interface</li>
-<li> consistent style throughout</li>
-<li> defensive programming</li>
-<li> good exception handling</li>
-                </ul>
-            </div>
+  <section>
+    <h2>Day 4 – Producer Features (Add Product + Update Stock)</h2>
+    <ul>
+      <li>Create Add Product form</li>
+      <li>Validate inputs server‑side</li>
+      <li>Insert data using prepared statements</li>
+      <li>Create Update Stock form</li>
+      <li>Prevent negative stock values</li>
+    </ul>
+    <p><strong>Important:</strong> Intentionally find an error → fix it → document it.</p>
+  </section>
 
-            <div class="focus-box">
-                <h3>user experience considerations</h3>
-                <p>The proposal defines clear success criteria that are:</p>
-                <ul>
-<li> Useful – does it meet the needs of the user?
-Are outputs etc. accurate</li>
-<li> Usable – is it easy to use / intuitive?</li>
-<li> Desirable – is it aesthetically pleasing?</li>
-<li> Does it represent a brand? Consistency.</li>
-<li> Findable – is it easy to navigate around and
-find the required information/features</li>
-<li> Accessible – what accessibility features
-have been included? Are these well
-implemented? Are they sufficient?</li>
-<li> Credible – is the information credible?</li>
-                </ul>
-            </div>
+  <section>
+    <h2>Day 5 – Orders (Simplified)</h2>
+    <ul>
+      <li>Create simple “Place Order” functionality</li>
+      <li>Reduce product stock when order placed</li>
+      <li>Store order in database</li>
+      <li>Prevent ordering more than available stock</li>
+    </ul>
+    <p><strong>No payment system required.</strong></p>
+  </section>
 
-        </div>
+  <section>
+    <h2>Day 6 – Testing & Iterative Development Evidence</h2>
+    <ul>
+      <li>Complete Test Log with valid, invalid and boundary data</li>
+      <li>Record failed tests and fixes</li>
+      <li>Write Iteration 1 & Iteration 2 summaries</li>
+      <li>Perform regression testing after fixes</li>
+    </ul>
+    <p>This day secures high marks.</p>
+  </section>
 
-	</section>
+  <section>
+    <h2>Day 7 – Review, Security & Final Checks</h2>
+    <ul>
+      <li>Write Review section (useful, usable, accessible, credible)</li>
+      <li>Document security measures:
+        <ul>
+          <li>Password hashing</li>
+          <li>Prepared statements</li>
+          <li>Input sanitisation</li>
+          <li>Role‑based access control</li>
+        </ul>
+      </li>
+      <li>Complete version log</li>
+      <li>Complete asset log</li>
+      <li>Final regression testing</li>
+    </ul>
+  </section>
+
+  <section class="important">
+    <h3>Always include these phrases in your documentation:</h3>
+    <ul>
+      <li>Iterative development process</li>
+      <li>Regression testing</li>
+      <li>Robust validation</li>
+      <li>Defensive programming</li>
+      <li>Referential integrity</li>
+      <li>Role‑based access control</li>
+      <li>Prepared statements</li>
+      <li>Input sanitisation</li>
+      <li>Modular structure</li>
+      <li>Version control</li>
+    </ul>
+  </section>
+
+</body>
+</html>
+
 	
 </body>
 </html>
