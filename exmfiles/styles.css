@@ -1,0 +1,74 @@
+:root {
+    --green: #91a879ff; 
+    --red: #a10a0aff; 
+    --light-red: #ca726fff; 
+    --off-white: #fffdfaff; 
+    --light-grey: #ccc8c0ff; 
+    --grey: #8a867cff;
+    --off-black: #201e18ff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--off-white);
+    color: var(--off-black);
+    position: relative;
+}
+
+/* ====================================================================================== */
+/* HEADER */
+
+/* Header container */
+.header-box {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    max-width: 1200px;
+    width: calc(100% - 40px);
+
+    background-color: var(--off-white);
+    border-radius: 16px;
+    z-index: 1000;
+
+    display: flex;
+}
+
+
+/* Logo image */
+.header-img img {
+    height: 100px;
+    width: auto;
+    flex: 1;
+    margin-left: 40px;
+    margin-top: 5px;
+}
+
+.header-links {
+    flex: 1;
+}
+
+
+/* ====================================================================================== */
+/* PRODUCTS CSS */
+/* ====================================================================================== */
+
+.head-img {
+    position: relative; /* crucial */
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.head-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ssn-box img {
+    height: 100px;
+    width: auto;
+}
