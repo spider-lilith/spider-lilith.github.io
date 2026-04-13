@@ -203,5 +203,227 @@ The successful implementation was retained as the foundation for further develop
 </ul>
 </section>
 
+  <section>
+    <pre>
+
+Great choice — producer filtering is **perfect for Day 4** and builds directly on the code you already have. I’ll take you through this **step by step**, with **exact SQL + PHP changes**, and I’ll explain *why* each step matters (so you can document it confidently).
+
+I’ll structure this as:
+
+1.  ✅ What we’re adding (conceptually)
+2.  ✅ Step 1: Fetch producers for the filter UI
+3.  ✅ Step 2: Extend your product SQL with producers
+4.  ✅ Step 3: Add producer filter logic (securely)
+5.  ✅ Step 4: Add the producer filter dropdown to HTML
+6.  ✅ Step 5: Defensive programming & edge cases
+7.  ✅ What this earns you in marks (so you stay motivated)
+
+You can implement this **incrementally** — once it works, stop and document.
+
+***
+
+## 1️⃣ What we’re adding (simple + honest)
+
+We are adding **ONE thing**:
+
+> Allow users to filter products by **producer**, using the `producers` table relation.
+
+This uses:
+
+*   your existing database design ✅
+*   JOINs ✅
+*   prepared statements ✅
+*   input validation ✅
+
+It’s a **clean iteration**, not a big jump.
+
+***
+
+## 2️⃣ Step 1: Fetch producers for the filter dropdown
+
+Add this **near the top of your products page**, alongside your categories query.
+
+### ✅ PHP: Fetch producers
+
+```php
+<?php
+// Fetch producers
+$producerStmt = $pdo->query("
+    SELECT producer_id, company_name 
+    FROM producers 
+    ORDER BY company_name
+");
+$producers = $producerStmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+```
+
+✅ Why this matters:
+
+*   shows dynamic UI data
+*   avoids hard‑coding producers
+*   easy to test
+
+***
+
+## 3️⃣ Step 2: Extend your main product SQL query
+
+You already join `categories`. We now also join `producers`.
+
+Find your existing SQL and **update it like this**:
+
+### ✅ Updated SQL (key change highlighted)
+
+```php
+$sql = "
+    SELECT 
+        p.product_id,
+        p.product_name,
+        p.description,
+        p.price,
+        p.quantity,
+        p.image_url,
+        c.name AS category_name,
+        pr.company_name AS producer_name
+    FROM products p
+    JOIN categories c ON p.category_id = c.id
+    JOIN producers pr ON p.producer_id = pr.producer_id
+    WHERE 1
+";
+```
+
+✅ Why this matters:
+
+*   demonstrates **relational joins**
+*   supports **product traceability**
+*   aligns perfectly with the GLH brief
+
+***
+
+## 4️⃣ Step 3: Add producer filter logic (securely)
+
+Now add a **producer filter block**, just like your category filter.
+
+### ✅ PHP: Producer filter logic
+
+Place this **after your category filter block**:
+
+```php
+/* PRODUCER FILTER */
+if (!empty($_GET['producer'])) {
+    $sql .= " AND pr.producer_id = :producer";
+    $params['producer'] = $_GET['producer'];
+}
+```
+
+✅ Why this matters:
+
+*   uses prepared statements (security ✅)
+*   easy to test normal & erroneous data
+*   keeps SQL readable and maintainable
+
+***
+
+## 5️⃣ Step 4: Add producer filter to the HTML form
+
+Inside your `<form class="product-filters">`, add this **below the category select**.
+
+### ✅ HTML: Producer dropdown
+
+```php
+<select name="producer">
+    <option value="">All Producers</option>
+    <?php foreach ($producers as $producer): ?>
+        <option 
+            value="<?= $producer['producer_id']; ?>"
+            <?= (($_GET['producer'] ?? '') == $producer['producer_id']) ? 'selected' : ''; ?>
+        >
+            <?= htmlspecialchars($producer['company_name']); ?>
+        </option>
+    <?php endforeach; ?>
+</select>
+```
+
+✅ Why this matters:
+
+*   shows **state retention** (selected stays selected)
+*   supports usability & accessibility
+*   dynamic + secure output
+
+***
+
+## 6️⃣ Step 5: Display the producer name on each product
+
+Under the product name or category, add:
+
+### ✅ Show producer on product card
+
+```php
+<p class="small-txt">
+    Producer: <?= htmlspecialchars($product['producer_name']); ?>
+</p>
+```
+
+✅ Why this matters:
+
+*   transparency ✅
+*   traceability ✅
+*   strong alignment with client requirements
+
+***
+
+## 7️⃣ Step 6: Defensive programming (small but powerful)
+
+You **already** have this — which is good — but now you can **talk about it properly**.
+
+You already handle this:
+
+```php
+<?php if (empty($products)): ?>
+    <p>No products found.</p>
+<?php else: ?>
+```
+
+Now you can test:
+
+*   producer with no products ✅
+*   invalid producer ID ✅
+*   combined filters ✅
+
+This gives you **perfect test cases** for Day 4.
+
+***
+
+## 8️⃣ What this earns you in the exam (important)
+
+By adding producer filtering, you can now **honestly claim**:
+
+*   ✅ relational data joins
+*   ✅ role‑appropriate filtering
+*   ✅ defensive programming
+*   ✅ iterative enhancement
+*   ✅ user‑centred design
+*   ✅ clear traceability to brief
+
+This is **exactly** what Band 4 answers talk about.
+
+***
+
+## 9️⃣ What to do immediately after implementing this
+
+### ✅ Do this **before** moving on:
+
+1.  Test:
+    *   valid producer
+    *   producer with no products
+    *   invalid producer value (`?producer=abc`)
+2.  Add **Iteration 4 documentation**
+3.  Add **3–5 test cases**
+4.  Update version log → `1.3`
+
+***
+      
+    </pre>
+  </section>
+
 </body>
 </html>
