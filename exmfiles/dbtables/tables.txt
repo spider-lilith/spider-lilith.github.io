@@ -1,0 +1,109 @@
+===Database task2_glh
+
+== Table structure for table cart
+
+|------
+|Column|Type|Null|Default
+|------
+|//**cart_id**//|int(11)|No|
+|user_id|int(11)|No|
+|product_id|int(11)|No|
+|quantity|int(11)|No|
+|added_at|datetime|No|current_timestamp()
+== Dumping data for table cart
+
+== Table structure for table categories
+
+|------
+|Column|Type|Null|Default
+|------
+|//**id**//|int(10)|No|
+|**name**|varchar(100)|No|
+== Dumping data for table categories
+
+|5|Bakery
+|4|Dairy
+|1|Fruit
+|3|Meat
+|2|Vegetables
+== Table structure for table orders
+
+|------
+|Column|Type|Null|Default
+|------
+|//**order_id**//|int(11)|No|
+|user_id|int(11)|No|
+|order_total|decimal(8,2)|No|
+|order_status|varchar(50)|No|
+|order_type|varchar(50)|No|
+|created_at|datetime|No|current_timestamp()
+== Dumping data for table orders
+
+== Table structure for table order_items
+
+|------
+|Column|Type|Null|Default
+|------
+|//**order_item_id**//|int(11)|No|
+|order_id|int(11)|No|
+|product_id|int(11)|No|
+|quantity|int(11)|No|
+|price|decimal(6,2)|No|
+== Dumping data for table order_items
+
+== Table structure for table producers
+
+|------
+|Column|Type|Null|Default
+|------
+|//**producer_id**//|int(11)|No|
+|user_id|int(11)|No|
+|business_name|varchar(150)|No|
+|description|text|Yes|NULL
+|location|varchar(150)|No|
+|created_at|datetime|No|current_timestamp()
+== Dumping data for table producers
+
+|1|2|Rabbit Hole|NULL| |2026-04-13 09:54:00
+|2|3|Cantarella|NULL| |2026-04-14 11:31:40
+== Table structure for table products
+
+|------
+|Column|Type|Null|Default
+|------
+|//**product_id**//|int(11)|No|
+|producer_id|int(11)|No|
+|product_name|varchar(150)|No|
+|category_id|int(10)|No|
+|description|text|Yes|NULL
+|price|decimal(6,2)|No|
+|quantity|int(11)|No|
+|image_url|varchar(255)|No|
+== Dumping data for table products
+
+|1|1|Cherries|1|NULL|4.99|10| 
+|2|1|Apples|1|NULL|3.50|10| 
+|3|1|Raspberries|1|NULL|5.99|20| 
+|5|2|Parsley|2|NULL|1.50|15| 
+|6|2|Coriander|2|NULL|2.99|40| 
+|7|1|British Beef|3|NULL|9.99|5| 
+|8|2|Cheddar Cheese|4|NULL|8.00|8| 
+|9|1|Sourdough Bread|5|NULL|7.50|3| 
+== Table structure for table users
+
+|------
+|Column|Type|Null|Default
+|------
+|//**user_id**//|int(11)|No|
+|name|varchar(100)|No|
+|**email**|varchar(100)|No|
+|password|varchar(255)|Yes|NULL
+|phone_number|int(11)|Yes|NULL
+|address|varchar(255)|Yes|NULL
+|user_role|enum(&#039;customer&#039;, &#039;producer&#039;, &#039;admin&#039;, &#039;&#039;)|No|
+|created_at|datetime|No|current_timestamp()
+== Dumping data for table users
+
+|1|glh|glh@greenfield.co.uk|$2y$10$dj8AA2VRu66MODqF3sIIFu5xkXNq1Gw99LTUP.c9TXuzzn5yAqDx2|NULL|NULL|admin|2026-04-13 09:50:30
+|2|producer1|producer1@email.com|$2y$10$3aq/B//3jFq7ShfkxuVmme7JHTh3pBu1qB8Q.9iI0Kcz01QHCU21K|NULL|NULL|producer|2026-04-13 09:51:41
+|3|producer2|producer2@email.com|$2y$10$I/UVT3fJzEeLEtlrwsmEieyi4bhEtq/I5KRiAUH7iCvIT0nU7IPNO|NULL|NULL| |2026-04-13 09:51:41
