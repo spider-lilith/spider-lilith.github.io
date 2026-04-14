@@ -14,40 +14,109 @@ body {
     background-color: var(--off-white);
     color: var(--off-black);
     position: relative;
+
+    font-family: "Chilanka", cursive;
 }
 
 /* ====================================================================================== */
 /* HEADER */
 
-/* Header container */
 .header-box {
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: sticky;
+    top: 20px; /* GAP from top of page */
+    margin: 20px; /* GAP from left & right */
 
     max-width: 1200px;
-    width: calc(100% - 40px);
+    width: 90%;
+    padding: 15px 40px;
 
     background-color: var(--off-white);
-    border-radius: 16px;
+    border-radius: 999px;
     z-index: 1000;
 
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: box-shadow 0.3s ease;
 }
 
+/* subtle shadow once it sticks */
+.header-box {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
 
-/* Logo image */
+/* Logo */
 .header-img img {
-    height: 100px;
+    height: 90px;
     width: auto;
-    flex: 1;
-    margin-left: 40px;
-    margin-top: 5px;
 }
+
+/* ================= NAV LINKS ================= */
 
 .header-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
     flex: 1;
+}
+
+.header-links a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+/* UNDERLINE */
+.header-links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+
+    width: 0%;
+    height: 2px;
+    background-color: var(--red);
+
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.header-links a:hover {
+    color: var(--red);
+    transform: scale(1.15);
+}
+
+/* animate underline in */
+.header-links a:hover::after {
+    width: 100%;
+}
+
+/* ================= ICON BUTTONS ================= */
+
+.header-buttons {
+    display: flex;
+    gap: 25px;
+}
+
+.header-buttons a {
+    color: var(--red);
+    font-size: 1.7rem;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+.header-buttons a:hover {
+    color: var(--light-red);
+    transform: scale(1.25);
 }
 
 /* ====================================================================================== */
@@ -70,18 +139,59 @@ body {
     color: var(--grey);
 }
 
+h1 {
+    font-family: "Rock Salt", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ====================================================================================== */
+/* INDEX PAGE */
+/* ====================================================================================== */
+
+.featured-products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.what-is-box {
+    background-color: var(--off-black);
+    color: var(--off-white);
+
+    display: flex;
+}
+
+.what-is-left {
+    text-align: center;
+    width: 50%;
+}
+
+.what-is-left img {
+    width: 25%;
+    height: auto;
+}
+
 /* ====================================================================================== */
 /* PRODUCTS CSS */
 /* ====================================================================================== */
 
 .head-img {
-    position: relative; /* crucial */
+    position: relative;
     width: 100%;
-    height: 80vh;
+    height: 890px;
+
+    /* pull hero under header */
+    margin-top: -170px;
+    
     overflow: hidden;
+    z-index: 0;
 }
 
 .head-img img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -128,6 +238,8 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+
 
 .product-box img {
     width: 100%;
