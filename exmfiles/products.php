@@ -1,6 +1,6 @@
 <?php
 include 'includes/header.php';
-include 'includes/db.php'; // your PDO connection
+include 'includes/db.php'; // PDO connection
 
 // Fetch categories
 $catStmt = $pdo->query("SELECT id, name FROM categories ORDER BY name");
@@ -59,10 +59,15 @@ $stmt->execute($params);
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<!-- ================================================================================= -->
 
 <div class="head-img">
     <img src="img/apple-orchard.png" alt="apple orchard">
 </div>
+
+<!-- ================================================================================= -->
+
+<h1>Top Seasonal Picks</h1>
 
 <section class="seasonal-products">
     <?php if (empty($products)): ?>
@@ -88,7 +93,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php endif; ?>
 </section>
 
-<hr>
+<hr> <!-- ================================================================================= -->
 
 <section class="search-filter-bar">
     <h1>All Products</h1>
@@ -115,12 +120,147 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <option value="">Sort by</option>
             <option value="price_asc">Price (Low → High)</option>
             <option value="price_desc">Price (High → Low)</option>
-            <option value="name_asc">Name (A–Z)</option>
+            <option value="name_asc">Name (A-Z)</option>
         </select>
 
         <button type="submit" class="red-btn">Apply</button>
     </form>
 </section>
 
-<hr>
+<hr> <!-- ================================================================================= -->
 
+<section class="product-showcase">
+
+    <div class="filters">
+        <div class="categories">
+            <h2>Categories</h2>
+            <ul>
+                <li>cat 1</li>
+                <li>cat 2</li>
+            </ul>
+        </div>
+
+        <div class="producers">
+            <h2>Producers</h2>
+            <ul>
+                <li>prod 1</li>
+                <li>prod 2</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="showcase">
+
+        <div class="product-box">
+            <img
+                    src="<?= htmlspecialchars($product['image_url'] ?: 'img/produce.jpg'); ?>"
+                    alt="<?= htmlspecialchars($product['product_name']); ?>"
+                >
+
+            <h3><?= htmlspecialchars($product['product_name']); ?></h3>
+            <p class="small-txt"><?= htmlspecialchars($product['category_name']); ?></p>
+
+            <p><?= htmlspecialchars($product['description'] ?? ''); ?></p>
+
+            <p><strong>£<?= number_format($product['price'], 2); ?></strong></p>
+
+            <button class="red-btn">Buy</button>
+        </div>
+
+        <div class="product-box">
+            <img
+                    src="<?= htmlspecialchars($product['image_url'] ?: 'img/produce.jpg'); ?>"
+                    alt="<?= htmlspecialchars($product['product_name']); ?>"
+                >
+
+            <h3><?= htmlspecialchars($product['product_name']); ?></h3>
+            <p class="small-txt"><?= htmlspecialchars($product['category_name']); ?></p>
+
+            <p><?= htmlspecialchars($product['description'] ?? ''); ?></p>
+
+            <p><strong>£<?= number_format($product['price'], 2); ?></strong></p>
+
+            <button class="red-btn">Buy</button>
+        </div>
+
+        <div class="product-box">
+            <img
+                    src="<?= htmlspecialchars($product['image_url'] ?: 'img/produce.jpg'); ?>"
+                    alt="<?= htmlspecialchars($product['product_name']); ?>"
+                >
+
+            <h3><?= htmlspecialchars($product['product_name']); ?></h3>
+            <p class="small-txt"><?= htmlspecialchars($product['category_name']); ?></p>
+
+            <p><?= htmlspecialchars($product['description'] ?? ''); ?></p>
+
+            <p><strong>£<?= number_format($product['price'], 2); ?></strong></p>
+
+            <button class="red-btn">Buy</button>
+        </div>
+
+        <div class="product-box">
+            <img
+                    src="<?= htmlspecialchars($product['image_url'] ?: 'img/produce.jpg'); ?>"
+                    alt="<?= htmlspecialchars($product['product_name']); ?>"
+                >
+
+            <h3><?= htmlspecialchars($product['product_name']); ?></h3>
+            <p class="small-txt"><?= htmlspecialchars($product['category_name']); ?></p>
+
+            <p><?= htmlspecialchars($product['description'] ?? ''); ?></p>
+
+            <p><strong>£<?= number_format($product['price'], 2); ?></strong></p>
+
+            <button class="red-btn">Buy</button>
+        </div>
+
+        <div class="product-box">
+            <img
+                    src="<?= htmlspecialchars($product['image_url'] ?: 'img/produce.jpg'); ?>"
+                    alt="<?= htmlspecialchars($product['product_name']); ?>"
+                >
+
+            <h3><?= htmlspecialchars($product['product_name']); ?></h3>
+            <p class="small-txt"><?= htmlspecialchars($product['category_name']); ?></p>
+
+            <p><?= htmlspecialchars($product['description'] ?? ''); ?></p>
+
+            <p><strong>£<?= number_format($product['price'], 2); ?></strong></p>
+
+            <button class="red-btn">Buy</button>
+        </div>
+
+        <div class="product-box">
+            <img
+                    src="<?= htmlspecialchars($product['image_url'] ?: 'img/produce.jpg'); ?>"
+                    alt="<?= htmlspecialchars($product['product_name']); ?>"
+                >
+
+            <h3><?= htmlspecialchars($product['product_name']); ?></h3>
+            <p class="small-txt"><?= htmlspecialchars($product['category_name']); ?></p>
+
+            <p><?= htmlspecialchars($product['description'] ?? ''); ?></p>
+
+            <p><strong>£<?= number_format($product['price'], 2); ?></strong></p>
+
+            <button class="red-btn">Buy</button>
+        </div>
+
+        <div class="product-box">
+            <img
+                    src="<?= htmlspecialchars($product['image_url'] ?: 'img/produce.jpg'); ?>"
+                    alt="<?= htmlspecialchars($product['product_name']); ?>"
+                >
+
+            <h3><?= htmlspecialchars($product['product_name']); ?></h3>
+            <p class="small-txt"><?= htmlspecialchars($product['category_name']); ?></p>
+
+            <p><?= htmlspecialchars($product['description'] ?? ''); ?></p>
+
+            <p><strong>£<?= number_format($product['price'], 2); ?></strong></p>
+
+            <button class="red-btn">Buy</button>
+        </div>
+
+    </div>
