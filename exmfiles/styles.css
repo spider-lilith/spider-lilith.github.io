@@ -6,7 +6,7 @@
     --light-grey: #ccc8c0ff; 
     --grey: #8a867cff;
     --off-black: #201e18ff;
-}
+} 
 
 body {
     margin: 0;
@@ -50,6 +50,25 @@ body {
     flex: 1;
 }
 
+/* ====================================================================================== */
+/* GENERAL ASSETS (buttons, links, etc) */
+/* ====================================================================================== */
+
+.red-btn {
+    background-color: var(--red);
+    margin: 15px;
+    border-radius: 25px;
+    height: 40px;
+    color: var(--off-white);
+}
+
+.red-btn :hover {
+    background-color: var(--light-red);
+}
+
+.small-txt {
+    color: var(--grey);
+}
 
 /* ====================================================================================== */
 /* PRODUCTS CSS */
@@ -68,7 +87,57 @@ body {
     object-fit: cover;
 }
 
+.seasonal-products {
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+
+    height: 500px;
+}
+
+.ssn-box {
+    background-color: var(--green);
+    display: flex;
+    flex-direction: column;
+
+    width: 250px;
+    height: 90%;
+    margin: 25px;
+
+    text-align: center;
+}
+
 .ssn-box img {
-    height: 100px;
+    height: 35%;
     width: auto;
+}
+
+.ssn-box .small-txt {
+    color: rgb(83, 104, 61);
+}
+
+/* --------------------------------------- */
+
+.product-showcase {
+    display: flex;
+}
+
+.showcase {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.product-box img {
+    width: 100%;
+    height: auto;
+}
+
+.product-box {
+    background-color: var(--light-grey);
+    margin: 25px;
+
+    width: 200px;
+    text-align: center;
 }
