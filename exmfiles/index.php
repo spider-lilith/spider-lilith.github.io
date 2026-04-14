@@ -19,10 +19,10 @@
 <!-- --------------------------------------------------------------------------------- -->
 <!-- FEATURED PRODUCTS -->
 <!-- --------------------------------------------------------------------------------- -->
-    <section id="featured-products">
+    <section class="featured-products">
         <div class="product-box">
             <div class="box-items">
-                <img alt="product item 1">
+                <img src="img/cherry-produce.png" alt="product item 1">
                 <h3>Product #1</h3>
                 <p class="small-txt">Category</p>
                 <p>Product Information</p>
@@ -32,7 +32,7 @@
 
         <div class="product-box">
             <div class="box-items">
-                <img alt="product item 2">
+                <img src="img/cherry-produce.png" alt="product item 2">
                 <h3>Product #2</h3>
                 <p class="small-txt">Category</p>
                 <p>Product Information</p>
@@ -42,7 +42,7 @@
 
         <div class="product-box">
             <div class="box-items">
-                <img alt="product item 3">
+                <img src="img/cherry-produce.png" alt="product item 3">
                 <h3>Product #3</h3>
                 <p class="small-txt">Category</p>
                 <p>Product Information</p>
@@ -59,7 +59,7 @@
             <div class="what-is-left">
                 <h1>What is Greenfield Local Hub?</h1>
                 <p>short paragraph explaining</p>
-                <img alt="GLH IMAGE">
+                <img src="img/GLH-logo.png" alt="GLH IMAGE">
                 <button class="red-btn">Learn More</button>
             </div>
 
