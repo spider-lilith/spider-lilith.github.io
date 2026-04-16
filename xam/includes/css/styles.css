@@ -1,0 +1,397 @@
+:root {
+    --green: #91a879ff; 
+    --red: #a10a0aff; 
+    --light-red: #ca726fff; 
+    --off-white: #fffdfaff; 
+    --light-grey: #ccc8c0ff; 
+    --grey: #8a867cff;
+    --off-black: #201e18ff;
+} 
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--off-white);
+    color: var(--off-black);
+    position: relative;
+
+    font-family: "Chilanka", cursive;
+}
+
+/* ====================================================================================== */
+/* HEADER */
+
+.header-box {
+    position: sticky;
+    top: 20px; /* GAP from top of page */
+    margin: 20px; /* GAP from left & right */
+
+    max-width: 1200px;
+    width: 90%;
+    padding: 15px 40px;
+
+    background-color: var(--off-white);
+    border-radius: 999px;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: box-shadow 0.3s ease;
+}
+
+/* subtle shadow once it sticks */
+.header-box {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Logo */
+.header-img img {
+    height: 90px;
+    width: auto;
+}
+
+/* ================= NAV LINKS ================= */
+
+.header-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex: 1;
+}
+
+.header-links a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+/* UNDERLINE */
+.header-links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+
+    width: 0%;
+    height: 2px;
+    background-color: var(--red);
+
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.header-links a:hover {
+    color: var(--red);
+    transform: scale(1.15);
+}
+
+/* animate underline in */
+.header-links a:hover::after {
+    width: 100%;
+}
+
+/* ================= ICON BUTTONS ================= */
+
+.header-buttons {
+    display: flex;
+    gap: 25px;
+}
+
+.header-buttons a {
+    color: var(--red);
+    font-size: 1.7rem;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+.header-buttons a:hover {
+    color: var(--light-red);
+    transform: scale(1.25);
+}
+
+/* ====================================================================================== */
+/* GENERAL ASSETS (buttons, links, etc) */
+/* ====================================================================================== */
+
+.red-btn {
+    background-color: var(--red);
+    margin: 15px;
+    border-radius: 25px;
+    height: 40px;
+    color: var(--off-white);
+
+    min-width: 110px;
+}
+
+.red-btn :hover {
+    background-color: var(--light-red);
+}
+
+.small-txt {
+    color: var(--grey);
+}
+
+h1 {
+    font-family: "Rock Salt", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.section-title {
+    text-align: center;
+    font-family: "rock salt", cursive;
+    font-size: 32px;
+    margin-bottom: 0px;
+}
+
+.redirect {
+    text-align: center;
+}
+
+.redirect .redirect-link {
+    color: var(--red);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.redirect .redirect-link:hover {
+    text-decoration: underline;
+    color: var(--red);
+}
+
+/* ====================================================================================== */
+/* LOGIN / SIGNUP */
+
+/* Shared background for login & signup pages */
+.auth-page {
+    min-height: 1080px;
+    background-image: url("../../img/field-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-wrapper {
+    flex: 1;                     /* take remaining space below header */
+    display: flex;
+    align-items: center;         /* vertical center */
+    justify-content: center;     /* horizontal center */
+}
+
+/* Login/signup box */
+.auth-container {
+    background-color: var(--off-white);
+    padding: 32px 45px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.auth-page .header-box {
+    margin-top: 20px;
+    align-self: center;
+}
+
+
+/* ====================================================================================== */
+/* INDEX PAGE */
+/* ====================================================================================== */
+
+.featured-products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.what-is-box {
+    background-color: var(--off-black);
+    color: var(--off-white);
+
+    display: flex;
+}
+
+.what-is-left {
+    text-align: center;
+    width: 50%;
+}
+
+.what-is-left img {
+    width: 25%;
+    height: auto;
+}
+
+/* ====================================================================================== */
+/* PRODUCTS CSS */
+/* ====================================================================================== */
+
+.head-img {
+    position: relative;
+    width: 100%;
+    height: 600px;
+
+    /* pull hero under header */
+    margin-top: -170px;
+    
+    overflow: hidden;
+    z-index: 0;
+}
+
+.head-img img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.seasonal-products {
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+
+    height: 500px;
+}
+
+.ssn-box {
+    background-color: var(--green);
+    display: flex;
+    flex-direction: column;
+
+    width: 250px;
+    height: 90%;
+    margin: 25px;
+
+    text-align: center;
+}
+
+.ssn-box img {
+    height: 35%;
+    width: auto;
+}
+
+.ssn-box .small-txt {
+    color: rgb(83, 104, 61);
+}
+
+/* --------------------------------------- */
+
+.product-showcase {
+    display: flex;
+    gap: 40px;
+
+    margin: 40px 50px;
+    align-items: flex-start;
+}
+
+
+.showcase {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.product-box img {
+    width: 100%;
+    height: auto;
+}
+
+.product-box {
+    background-color: var(--light-grey);
+    margin: 25px;
+
+    width: 200px;
+    text-align: center;
+}
+
+.search-filter-bar {
+    margin: 60px 50px 40px;
+    padding: 20px 0;
+
+    border-top: 2px solid var(--light-grey);
+    border-bottom: 2px solid var(--light-grey);
+}
+
+.product-filters {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product-filters input[type="text"],
+.product-filters select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--light-grey);
+    font-family: inherit;
+}
+
+.filters {
+    min-width: 220px;
+    max-width: 260px;
+
+    border-right: 2px solid var(--light-grey);
+    padding-right: 25px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.filters h3 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.filters label {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+
+    width: 100%;
+}
+
+.wave-divider {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    margin-top: -120px;
+}
+
+.wave-divider svg {
+    display: block;
+    width: 100%;
+    height: 101%;
+    transform: scaleY(-1);
+}
+
+.wave-divider svg path {
+    fill: var(--off-white);
+    stroke: rgba(0, 0, 0, 0.08);
+    stroke-width: 1;
+}
