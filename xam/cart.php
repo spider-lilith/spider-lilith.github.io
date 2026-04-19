@@ -71,6 +71,8 @@ Page Content
 <h3>Total: £<?= number_format($total, 2); ?></h3>
 
 <!-- link to checkout -->
-<a href="checkout.php" class="red-btn">Proceed to Checkout</a>
+<a href="<?= BASE_URL ?>/checkout.php" class="red-btn">
+    Proceed to Checkout
+</a>
 
 <?php endif; ?>
