@@ -8,13 +8,13 @@ if ($_SESSION['user_role'] !== 'producer') {
 
 require_once ROOT_PATH . '/includes/header.php';
 
-/* Access control */
+/* access control */
 if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'producer') {
     header('Location: /TLEVEL-exam/finished/login.php');
     exit;
 }
 
-/* Get producer_id for logged-in user */
+/* get producer_id for logged-in user */
 $producerStmt = $pdo->prepare("
     SELECT producer_id
     FROM producers
@@ -28,7 +28,7 @@ if (!$producerId) {
     exit;
 }
 
-/* Handle stock update */
+/* handle stock update */
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['product_id'], $_POST['quantity']) && is_numeric($_POST['quantity'])) {
 
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-/* Fetch producer products */
+/* fetch producer products */
 $productStmt = $pdo->prepare("
     SELECT product_id, product_name, quantity
     FROM products
@@ -57,9 +57,13 @@ $productStmt->execute([$producerId]);
 $products = $productStmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<!-- --------------------------------------------------------------------------------- -->
+<!-- PAGE CONTENT -->
+<!-- --------------------------------------------------------------------------------- -->
+
 <h1>Producer Dashboard</h1>
 
-<form action="/TLEVEL-exam/finished/logout.php" method="POST" class="logout-form">
+<form action="<?= BASE_URL ?>logout.php" method="post">
     <button type="submit" class="red-btn">Log out</button>
 </form>
 
