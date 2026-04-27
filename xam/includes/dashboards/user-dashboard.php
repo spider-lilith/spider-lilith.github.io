@@ -15,7 +15,8 @@ if ($_SESSION['user_role'] !== 'customer') {
 require_once ROOT_PATH . '/includes/header.php';
 ?>
 
-<img src="<?= BASE_URL ?>img/apple-background.png" alt="Dashboard background">
+<body class="dashboard">
+
 
 <div class="dashboard-container">
 
@@ -82,3 +83,5 @@ require_once ROOT_PATH . '/includes/header.php';
 </div>
 
 <?php require_once ROOT_PATH . '/includes/footer.php'; ?>
+
+</body>
