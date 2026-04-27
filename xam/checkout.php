@@ -2,7 +2,7 @@
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/header.php';
 
-/* Must be logged in */
+/* must be logged in */
 if (!isset($_SESSION['user_id'])) {
     header('Location: ' . BASE_URL . '/login.php');
     exit;
@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 
 $userId = $_SESSION['user_id'];
 
-/* Fetch cart items */
+/* fetch cart items */
 $cartStmt = $pdo->prepare("
     SELECT 
         c.product_id,
@@ -23,19 +23,19 @@ $cartStmt = $pdo->prepare("
 $cartStmt->execute([$userId]);
 $cartItems = $cartStmt->fetchAll(PDO::FETCH_ASSOC);
 
-/* Empty cart check */
+/* check if cart is empty */
 if (empty($cartItems)) {
     echo "<p>Your cart is empty.</p>";
     exit;
 }
 
-/* Calculate total */
+/* calculate total */
 $total = 0;
 foreach ($cartItems as $item) {
     $total += $item['price'] * $item['quantity'];
 }
 
-/* PROCESS ORDER */
+/* PROCESS ORDER --------------------------------------------------------------------------------- */
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!in_array($_POST['order_type'], ['collection', 'delivery'])) {
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $pdo->beginTransaction();
 
-        /* Insert order */
+        /* insert order */
         $orderStmt = $pdo->prepare("
             INSERT INTO orders (user_id, order_total, order_status, order_type)
             VALUES (?, ?, 'pending', ?)
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $orderId = $pdo->lastInsertId();
 
-        /* Insert order items */
+        /* insert order items */
         $itemStmt = $pdo->prepare("
             INSERT INTO order_items (order_id, product_id, quantity, price)
             VALUES (?, ?, ?, ?)
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ]);
         }
 
-        /* Clear cart */
+        /* clear cart when finished */
         $clearStmt = $pdo->prepare("DELETE FROM cart WHERE user_id = ?");
         $clearStmt->execute([$userId]);
 
@@ -78,12 +78,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: ' . BASE_URL . '/order-success.php');
         exit;
 
+    /* if order fails */
     } catch (Exception $e) {
         $pdo->rollBack();
         echo "Order failed. Please try again.";
     }
 }
 ?>
+
+<!-- --------------------------------------------------------------------------------- -->
+<!-- PAGE CONTENT -->
+<!-- --------------------------------------------------------------------------------- -->
 
 <h1>Checkout</h1>
 
