@@ -2,9 +2,9 @@
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/header.php';
 
-/* =========================
+/* ---------------------------------------------------------------------------------
     FETCH CATEGORIES & PRODUCERS
-   ========================= */
+--------------------------------------------------------------------------------- */
 
 $catStmt = $pdo->query("SELECT id, name FROM categories ORDER BY name");
 $categories = $catStmt->fetchAll(PDO::FETCH_ASSOC);
@@ -16,9 +16,9 @@ $producerStmt = $pdo->query("
 ");
 $producers = $producerStmt->fetchAll(PDO::FETCH_ASSOC);
 
-/* =========================
+/* ---------------------------------------------------------------------------------
     FEATURED PRODUCTS (3 ONLY)
-   ========================= */
+--------------------------------------------------------------------------------- */
 
 $featuredStmt = $pdo->query("
     SELECT 
@@ -37,7 +37,7 @@ $featuredProducts = $featuredStmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!-- --------------------------------------------------------------------------------- -->
-<!-- HERO SLIDESHOW -->
+<!-- HERO -->
 <!-- --------------------------------------------------------------------------------- -->
 
     <div class="head-img">
@@ -92,7 +92,7 @@ $featuredProducts = $featuredStmt->fetchAll(PDO::FETCH_ASSOC);
                 <h1>What is Greenfield Local Hub?</h1>
                 <p>short paragraph explaining</p>
                 <img src="<?= BASE_URL ?>img/GLH-logo.png" alt="GLH IMAGE">
-                <a href="<?= BASE_URL ?>index.php#what-is" class="red-btn">Learn More</a>
+                <a href="<?= BASE_URL ?>about.php" class="red-btn">Learn More</a>
             </div>
 
             <div class="what-is-right">
